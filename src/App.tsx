@@ -1,11 +1,17 @@
 import './App.css'
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom'
+import NotFound from "./pages/NotFound"
 
 function App() {
  
 
   return (
     <>
-      heelo
+      <Router>
+        <Routes>
+          <Route path='*' element={<NotFound/>}
+        </Routes>
+      </Router>
     </>
   )
 }

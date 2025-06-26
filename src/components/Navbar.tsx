@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { Menu, User, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from '../lib/utils';
 
@@ -9,7 +9,13 @@ export default function Navbar() {
         {name: "About", href: "#about"},
         {name: "Contact", href: "#contact"},
         {name: "Events", href: "#events"},
-        {name: "Login", href: "/login"},
+        {name: (
+            <span className="flex items-center gap-1">
+              <User size={20} />
+              Login
+            </span>
+          ),
+          href: "/login"},
     ];
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +35,7 @@ export default function Navbar() {
         "fixed w-full z-40 transition-all duration-300",
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
     )}>
-      <div className='container flex items-center justify-between md:px-8 px-2'>
+      <div className='container flex items-center justify-between md:px-12 px-2'>
         <a className='text-2xl font-bold text-white flex items-center' href='#hero'>
             <span className='relative z-10 px-2'>Evenza</span>
         </a>

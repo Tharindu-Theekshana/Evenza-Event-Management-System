@@ -44,7 +44,7 @@ export default function Navbar() {
             {navItem.map((item, key)=>(
                 <a key={key} 
                 href={item.href}
-                className="text-foreground/80 text-white text-lg hover:text-blue-400 transition-colors duration-300">
+                className="text-white/80 hover:text-blue-400 block px-3 py-2 rounded-md text-lg font-medium transition-all duration-300 justify-center items-center gap-1 text-center">
                     {item.name}
                 </a>
             ))}
@@ -71,7 +71,7 @@ export default function Navbar() {
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-blue-400 text-white transition-colors duration-300"
+                className="text-white/80 hover:text-white block text-lg px-3 py-2 rounded-md font-medium hover:bg-white/10 transition-all duration-300 justify-center items-center gap-1 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

@@ -22,6 +22,7 @@ const TrendingEvents = () => {
         fetchEvents();
     },[]);
 
+    const visibleEvents = showAll ? events : events.slice(0,4);
 
     return(
         <section></section>

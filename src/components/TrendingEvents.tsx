@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import {getAllApprovedEvents} from '../services/EventService';
+import { ArrowRight } from 'lucide-react';
 
 const TrendingEvents = () => {
 
@@ -12,6 +13,7 @@ const TrendingEvents = () => {
         time?: string;
         location?: string;
         price?: number;
+        category?: string;
     }
 
     const [events, setEvents] = useState<Event[]>([]);
@@ -35,29 +37,46 @@ const TrendingEvents = () => {
 
     const visibleEvents = showAll ? events : events.slice(0,4);
 
+    const formatTime = (timeStr: string | undefined) => {
+        if (!timeStr) return 'Still not mentioned';
+        
+        const timeWithDate = `2025-01-01T${timeStr}`;
+        const date = new Date(timeWithDate);
+        
+        return isNaN(date.getTime()) 
+            ? 'Still not mentioned'
+            : date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+    };
+
     return(
         <section className=" bg-gradient-to-r from-white via-blue-50 to-white">
-            <h2 className='text-3xl font-bold text-center text-blue-950 pt-7 pb-7'>Trending Events Right Now</h2>
+            <h2 className='text-3xl md:text-4xl font-bold text-center text-blue-950 pt-7 pb-7'>Trending Events Right Now</h2>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto '>
                 {visibleEvents.map((event) => (
-                    <div key={event.id}>
+                    <div key={event.id} className='shadow-lg mx-5 rounded-2xl bg-gray-50'>
                         {event.images?.map((img) => (
-                            <img src={img} alt="" />
+                            <img src={img} alt="" className=' w-[100%] h-100 object-cover rounded-t-2xl' />
                             
                         ))}
-                        <div>
-                            <h3>{event.name}</h3>
-                            <h2>{event.date}</h2>
-                            <h2>{event.time}</h2>
-                            <h2>{event.location}</h2>
-                            <h2>{event.price}</h2>
+                        <div className='px-4 py-4'>
+                            <h3 className='font-bold text-[18px] text-blue-950 uppercase'>{event.name}</h3>
+                            <h2 className='pt-1 text-blue-800 font-medium'>{event.date? new Date(event.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year: 'numeric'}) : 'Still not mentioned'}</h2>
+                            <h2 className='text-blue-800 font-medium'>{formatTime(event.time)}</h2>
+                            <h2 className='text-[17px] text-gray-800 font-semibold'>{event.location}</h2>
+                            <h2 className='text-gray-600'>{event.category}</h2>
+                            <span className='text-[12px] text-gray-700 font-bold'>{event.price} LKR </span><span className='text-[12px] text-gray-600'>Upwards</span>
                         </div>
                         
                     </div>
                     
                 ))}
             </div>
+            {!showAll && events.length > 4 && (
+                <div className='text-center mt-8 mb-8'>
+                    <button className='bg-blue-900 rounded-3xl text-white text-[17px] px-15 py-3 hover:bg-blue-950 duration-300' onClick={()=> setShowAll(true) }>View All Events</button>
+                </div>
+            )}
         </section>
     )
 };

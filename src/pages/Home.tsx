@@ -1,5 +1,6 @@
 import HeroSection from "../components/HeroSection"
 import Navbar from "../components/Navbar"
+import TrendingEvents from "../components/TrendingEvents"
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div>
         <Navbar/>
         <HeroSection/>
+        <TrendingEvents/>
     </div>
   )
 }

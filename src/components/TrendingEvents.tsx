@@ -39,7 +39,7 @@ const TrendingEvents = () => {
         <section className=" bg-gradient-to-r from-white via-blue-50 to-white">
             <h2 className='text-3xl font-bold text-center text-blue-950 pt-7 pb-7'>Trending Events Right Now</h2>
 
-            <div className=''>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto'>
                 {visibleEvents.map((event) => (
                     <div key={event.id}>
                         {event.images?.map((img) => (

@@ -15,7 +15,7 @@ export const getAllApprovedEvents = async () => {
 export const getEventById = async (id: number)=> {
     try{
 
-        const response = await api.get(`/getEventById/${id}`);
+        const response = await api.get(`event/getEventById/${id}`);
         return response.data;
     }catch(e){
         console.error("Error fetching each event : ", e);

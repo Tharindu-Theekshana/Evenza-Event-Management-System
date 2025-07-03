@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import {getAllApprovedEvents} from '../services/EventService';
 import { ArrowRight } from 'lucide-react';
+import  EachEvent  from './EachEvent';
+import { useNavigate } from 'react-router-dom';
+
 
 const TrendingEvents = () => {
 
@@ -48,13 +51,19 @@ const TrendingEvents = () => {
             : date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
     };
 
+    const navigate = useNavigate();
+
+    const handleClick = (id: string | number) => {
+        navigate(`/eachEvent/${id}`)
+    }
+
     return(
         <section className=" bg-gradient-to-r from-white via-blue-50 to-white">
             <h2 className='text-3xl md:text-4xl font-bold text-center text-blue-950 pt-7 pb-7'>Trending Events Right Now</h2>
 
             <div className='grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto '>
                 {visibleEvents.map((event) => (
-                    <div key={event.id} className='shadow-lg mx-5 rounded-2xl bg-gray-50 hover:scale-101 duration-300'>
+                    <div key={event.id} onClick={ () => handleClick(Number(event.id))} className='shadow-lg mx-5 rounded-2xl bg-gray-50 hover:scale-101 duration-300'>
                         {event.images?.map((img) => (
                             <img src={img} alt="" className=' w-[100%] h-100 object-cover rounded-t-2xl' />
                             

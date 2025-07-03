@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom"
 
     return(
         <div>
-            
+            this is a event and id is {id}
         </div>
     )
 }

@@ -54,7 +54,7 @@ const TrendingEvents = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto '>
                 {visibleEvents.map((event) => (
-                    <div key={event.id} className='shadow-lg mx-5 rounded-2xl bg-gray-50'>
+                    <div key={event.id} className='shadow-lg mx-5 rounded-2xl bg-gray-50 hover:scale-101 duration-300'>
                         {event.images?.map((img) => (
                             <img src={img} alt="" className=' w-[100%] h-100 object-cover rounded-t-2xl' />
                             

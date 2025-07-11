@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getEventById } from "../services/EventService";
-import { number } from "yup";
+
 
  const EachEvent = () => {
 

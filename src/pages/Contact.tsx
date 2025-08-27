@@ -3,12 +3,10 @@ import Navbar from "../components/Navbar";
 import {
     Mail,
     Phone,
-    MapPin,
     Clock,
     Send,
     MessageSquare,
     Headphones,
-    Globe,
     Facebook,
     Twitter,
     Instagram,
@@ -16,7 +14,6 @@ import {
     CheckCircle,
     ArrowLeft,
     User,
-    Building
   } from 'lucide-react';
 import Footer from "../components/Footer";
 
@@ -39,13 +36,6 @@ import Footer from "../components/Footer";
     action: string;
   }
   
-  interface OfficeLocation {
-    city: string;
-    address: string;
-    phone: string;
-    email: string;
-    hours: string;
-  }
 
 export default function Contact() {
     const [formData, setFormData] = useState<ContactFormData>({
@@ -144,8 +134,8 @@ export default function Contact() {
       return (
         <>
         <Navbar/>
-        <div className="min-h-screen pt-18 bg-white">
-          <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-20">
+        <div className="min-h-screen bg-white">
+          <section className="bg-blue-900 pt-35 text-white py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
                 Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Touch</span>
@@ -179,14 +169,14 @@ export default function Contact() {
                     href={method.action}
                     className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
                   >
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
-                      <div className="text-blue-600 group-hover:text-white transition-colors">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-900 transition-colors">
+                      <div className="text-blue-900 group-hover:text-white transition-colors">
                         {method.icon}
                       </div>
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{method.title}</h3>
                     <p className="text-gray-600 text-sm mb-4">{method.description}</p>
-                    <p className="text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
+                    <p className="text-blue-900 font-medium group-hover:text-blue-950 transition-colors">
                       {method.value}
                     </p>
                   </a>
@@ -215,7 +205,7 @@ export default function Contact() {
                             required
                             value={formData.firstName}
                             onChange={handleInputChange}
-                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-colors"
                             placeholder="John"
                           />
                         </div>
@@ -233,7 +223,7 @@ export default function Contact() {
                             required
                             value={formData.lastName}
                             onChange={handleInputChange}
-                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-colors"
                             placeholder="Doe"
                           />
                         </div>
@@ -253,7 +243,7 @@ export default function Contact() {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-colors"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -270,7 +260,7 @@ export default function Contact() {
                         rows={5}
                         value={formData.message}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-colors resize-none"
                         placeholder="Tell us more about your inquiry..."
                       />
                     </div>
@@ -278,7 +268,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 font-medium transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+                      className="w-full bg-blue-900 text-white py-4 rounded-lg hover:bg-blue-950 font-medium transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
                     >
                       {isSubmitting ? (
                         <>
@@ -305,14 +295,14 @@ export default function Contact() {
     
                   <div className="bg-blue-50 rounded-xl p-6">
                     <div className="flex items-center mb-4">
-                      <Clock className="h-6 w-6 text-blue-600 mr-3" />
+                      <Clock className="h-6 w-6 text-blue-900 mr-3" />
                       <h3 className="text-xl font-semibold text-gray-900">Business Hours</h3>
                     </div>
                     <div className="space-y-2 text-gray-600">
                       <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM PST</p>
                       <p><strong>Saturday:</strong> 9:00 AM - 2:00 PM PST</p>
                       <p><strong>Sunday:</strong> Closed</p>
-                      <p className="text-sm text-blue-600 mt-2">
+                      <p className="text-sm text-blue-900 mt-2">
                          Live chat is available 24/7 for urgent inquiries
                       </p>
                     </div>

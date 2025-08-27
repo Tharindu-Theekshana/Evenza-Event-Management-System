@@ -55,7 +55,7 @@ const TrendingEvents = () => {
 
     const navigate = useNavigate();
 
-    const handleClick = (id: string | number) => {
+    const handleClick = (id:number) => {
         navigate(`/eachEvent/${id}`)
     }
 

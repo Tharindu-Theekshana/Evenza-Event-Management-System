@@ -28,8 +28,8 @@ export default function MidSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 duration-600 transition-colors">
-                <Calendar className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-900 duration-600 transition-colors">
+                <Calendar className="h-6 w-6 text-blue-900 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Smart Scheduling</h3>
               <p className="text-gray-600">
@@ -38,8 +38,8 @@ export default function MidSection() {
             </div>
 
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 duration-600 transition-colors">
-                <Users className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-900 duration-600 transition-colors">
+                <Users className="h-6 w-6 text-blue-900 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Guest Management</h3>
               <p className="text-gray-600">
@@ -48,8 +48,8 @@ export default function MidSection() {
             </div>
 
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 duration-600 transition-colors">
-                <BarChart3 className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-900 duration-600 transition-colors">
+                <BarChart3 className="h-6 w-6 text-blue-900 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Analytics & Insights</h3>
               <p className="text-gray-600">
@@ -58,8 +58,8 @@ export default function MidSection() {
             </div>
 
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 duration-600 transition-colors">
-                <Shield className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-900 duration-600 transition-colors">
+                <Shield className="h-6 w-6 text-blue-900 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Secure & Reliable</h3>
               <p className="text-gray-600">
@@ -68,8 +68,8 @@ export default function MidSection() {
             </div>
 
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 duration-600 transition-colors">
-                <Zap className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-900 duration-600 transition-colors">
+                <Zap className="h-6 w-6 text-blue-900 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Lightning Fast</h3>
               <p className="text-gray-600">
@@ -78,8 +78,8 @@ export default function MidSection() {
             </div>
 
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow group">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 duration-600 transition-colors">
-                <Heart className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-900 duration-600 transition-colors">
+                <Heart className="h-6 w-6 text-blue-900 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">24/7 Support</h3>
               <p className="text-gray-600">
@@ -100,7 +100,7 @@ export default function MidSection() {
             <a href="#events" className="bg-white text-blue-900 px-16 py-4 rounded-full hover:bg-gray-50 font-semibold text-lg transition-colors">
               Book Event
             </a>
-            <button onClick={()=> {navigate("/login")}} className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 font-semibold text-lg transition-colors">
+            <button onClick={()=> {navigate("/login")}} className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-900 font-semibold text-lg transition-colors">
               Join As Organizer
             </button>
           </div>

@@ -58,7 +58,7 @@ export default function Navbar() {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
     )}>
       <div className='container flex items-center justify-between md:px-12 px-2'>
-        <a className='text-2xl font-bold text-blue-400 flex items-center' href='#hero'>
+        <a className='text-[26px] font-bold text-gray-400 flex items-center' href='#hero'>
             <span className='relative z-10 px-2'>Evenza</span>
         </a>
 
@@ -67,7 +67,7 @@ export default function Navbar() {
                 <a key={key} 
                 href={item.href}
                 onClick={item.onClick}
-                className="text-blue-400 hover:border-b-3 block px-3 py-2 text-lg font-medium transition-all justify-center items-center gap-1 text-center">
+                className="text-gray-400 hover:border-b-3 block px-3 py-2 text-[20px] font-medium transition-all justify-center items-center gap-1 text-center">
                     {item.name}
                 </a>
             ))}

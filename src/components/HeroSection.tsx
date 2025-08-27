@@ -13,18 +13,15 @@ export default function HeroSection() {
           <div className="max-w-5xl mx-auto text-center space-y-8">
             
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                Simplify Your Events With{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                  Evenza
-                </span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white leading-tight">
+                Simplify Your Events With Evenza
+                
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-100 font-light max-w-3xl mx-auto">
                 Powerful tools to manage, organize, and celebrate.
               </p>
             </div>
 
-            {/* Search bar */}
             <div className="mt-12 max-w-2xl mx-auto">
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full blur opacity-20 group-hover:opacity-30 transition-opacity"></div>

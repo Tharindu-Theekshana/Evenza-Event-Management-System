@@ -29,6 +29,7 @@ import { getEventById } from "../services/EventService";
             const eventID = parseInt(id, 10);
             const data = await getEventById(eventID);
             setEvent(data);
+            console.log(data)
         }
     };
     fetchEvent();

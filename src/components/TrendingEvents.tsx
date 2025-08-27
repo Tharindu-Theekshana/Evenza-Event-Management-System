@@ -28,7 +28,9 @@ const TrendingEvents = () => {
         const fetchEvents = async () => {
          try{
 
-            const data = await getAllApprovedEvents();
+            const status = "approved";
+
+            const data = await getAllApprovedEvents(status);
             setEvents(data);
 
             }catch(e){

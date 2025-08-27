@@ -1,9 +1,13 @@
 import api from './api';
 
-export const getAllApprovedEvents = async () => {
+export const getAllApprovedEvents = async (status: string) => {
     try{
 
-        const response = await api.get('/event/getApprovedEvents');
+        const response = await api.get('/event/getEventsByStatus', {
+            params : {
+                status : status
+            }
+        });
         return response.data;
 
     }catch(e){

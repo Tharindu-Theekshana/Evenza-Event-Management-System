@@ -4,6 +4,8 @@ import NotFound from "./pages/NotFound"
 import Home from "./pages/Home"
 import Login from './pages/Login'
 import EachEvent  from './components/EachEvent'
+import About from './pages/About'
+import Contact from './pages/Contact'
 
 function App() {
  
@@ -16,6 +18,8 @@ function App() {
           <Route index element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/eachEvent/:id' element={<EachEvent/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/contact' element={<Contact/>}/>
         </Routes>
       </Router>
     </>

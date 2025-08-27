@@ -60,7 +60,7 @@ const TrendingEvents = () => {
     }
 
     return(
-        <section className=" bg-gradient-to-r from-white via-blue-50 to-white">
+        <section id='events' className=" bg-gray-50 ">
             <h2 className='text-3xl md:text-4xl font-bold text-center text-blue-950 pt-7 pb-7'>Trending Events Right Now</h2>
 
             <div className='grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto '>
@@ -84,7 +84,7 @@ const TrendingEvents = () => {
                 ))}
             </div>
             {!showAll && events.length > 4 && (
-                <div className='text-center mt-8 mb-8'>
+                <div className='text-center py-10'>
                     <button className='bg-blue-900 rounded-3xl text-white text-[17px] px-15 py-3 hover:bg-blue-950 duration-300' onClick={()=> setShowAll(true) }>View All Events</button>
                 </div>
             )}

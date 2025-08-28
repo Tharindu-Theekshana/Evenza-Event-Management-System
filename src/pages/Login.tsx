@@ -5,6 +5,8 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { login, register as registerUser } from "../services/AuthService";
+
 
 type UserType = 'customer' | 'organizer';
 
@@ -109,28 +111,29 @@ export default function Login() {
     }
   });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     try {
       if (isSignUp) {
-        // Call Register API
-        console.log({
-          name: data.name,
-          email: data.email,
-          password: data.password,
-          userType: data.userType,
-        });
         
-        alert("Registration successful!");
+        const response = await registerUser(data);
+
+        alert(response.message);
         setIsSignUp(!isSignUp);
         reset();
       } else {
-        // Call Login API
-        console.log( {
-          email: data.email,
-          password: data.password,
-        });
+        
+        const response = await login(data);
+        console.log(response)
+        if(response.token){
 
-        alert("Login successful!");
+          localStorage.clear();
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('userRole', response.role);
+          localStorage.setItem('isLoggedIn', response.loggedIn);
+          localStorage.setItem('userId', response.userId);
+          localStorage.setItem('name',response.name);
+      }; 
+        alert(response.message);
         reset()
       }
     } catch (error: any) {

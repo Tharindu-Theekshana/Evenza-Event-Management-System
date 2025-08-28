@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import EachEvent  from './components/EachEvent'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
  
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop/>
         <Routes>
           <Route path='*' element={<NotFound/>}/>
           <Route index element={<Home/>}/>

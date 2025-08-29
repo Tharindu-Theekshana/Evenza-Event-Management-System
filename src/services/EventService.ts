@@ -53,4 +53,24 @@ export const getEventsOfOrganizerByStatus = async (status: string,id:number) => 
         console.error("cant get events : ", e);
         throw e;
     }
-}
+};
+
+export const createEvent = async (formData:any) => {
+    try{
+
+        const token = localStorage.getItem('token');
+
+        const response = await api.post("/event/createEvent", formData, {
+            headers: {
+              'Authorization': `Bearer ${token}`,         
+              'Content-Type': 'multipart/form-data',      
+            }
+          });
+
+        return response.data;
+
+    }catch(e){
+        console.error("cant create profile : ",e);
+        throw e;
+    }
+};

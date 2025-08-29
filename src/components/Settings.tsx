@@ -39,8 +39,8 @@ export default function Settings() {
   return (
     <>
     <Navbar/>
-      
-      <div className='pt-16 min-h-screen bg-gray-50'>
+    <div className='py-10 bg-blue-900'></div>
+      <div className='pt-2 min-h-screen bg-gray-50'>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           
           <div className="text-center mb-12">

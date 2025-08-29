@@ -95,7 +95,8 @@ export default function TotalEvents() {
       return (
         <>
         <Navbar/>
-        <div className="min-h-screen bg-gray-50 p-4 md:p-6 md:pt-20 pt-18">
+        <div className='py-10 bg-blue-900'></div>
+        <div className="min-h-screen bg-gray-50 p-4 md:p-6 md:pt-10 pt-10">
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-2">All Events</h1>
@@ -203,7 +204,7 @@ export default function TotalEvents() {
                     
                     <div className="flex items-center gap-2">
                       <DollarSign className="h-4 w-4 text-blue-900" />
-                      <span className="text-sm font-semibold text-blue-900">${event.price}</span>
+                      <span className="text-sm font-semibold text-blue-900">LKR {event.price}</span>
                     </div>
                   </div>
                 </div>

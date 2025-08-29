@@ -49,7 +49,8 @@ const StatCard: FC<StatCardProps> = ({ title,value, icon: Icon }) => (
   return (
     <>
       <Navbar />
-      <div className="min-h-screen pt-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <div className='py-10 bg-blue-900'></div>
+      <div className="min-h-screen pt-5 bg-gradient-to-br from-blue-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">

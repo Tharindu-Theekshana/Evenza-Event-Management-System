@@ -1,8 +1,8 @@
 import { LogOut, Menu, User, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { cn } from '../lib/utils';
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../services/AuthService";
+import { cn } from "../lib/utils";
 
 export default function Navbar() {
 

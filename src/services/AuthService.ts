@@ -40,4 +40,15 @@ export const login = async (data: AuthFormData) => {
         console.error("cant register : ",e);
         throw e;
     }
-}
+};
+
+export const logoutUser = async () => {
+    try{
+        const response = await api.post("/auth/logout");
+        return response.data;
+
+    }catch(e){
+        console.error('cant logout : ',e );
+        throw e;
+    }
+};

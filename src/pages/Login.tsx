@@ -135,6 +135,16 @@ export default function Login() {
       }; 
         alert(response.message);
         reset()
+
+        const userRole = localStorage.getItem('userRole');
+
+            if (userRole === 'customer') {
+                navigate('/customerDashboard');
+              } else if (userRole === 'organizer') {
+                navigate('/organizerDashboard');
+              } else if (userRole === 'admin') {
+                navigate('/adminDashboard');
+              }
       }
     } catch (error: any) {
       console.error(error);

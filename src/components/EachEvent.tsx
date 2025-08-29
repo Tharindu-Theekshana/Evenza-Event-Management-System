@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { getEventById } from "../services/EventService";
 import { Calendar, Clock, MapPin, User, Tag, Users, DollarSign } from "lucide-react";
 import Navbar from "./Navbar";
@@ -7,6 +7,10 @@ import Footer from "./Footer";
 
 
  const EachEvent = () => {
+
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const role = localStorage.getItem('userRole');
+    const navigate = useNavigate();
 
     interface Event{
         id: string | number;
@@ -50,6 +54,15 @@ import Footer from "./Footer";
             day: 'numeric'
         });
     };
+
+    const handleBook = (id:any) => {
+        if(isLoggedIn && role == "customer" || "user"){
+            navigate("/makeBooking", {state: {id}});
+  
+          }else{
+            alert("Login as a customer to hire!");
+          }
+    }
 
     const formatTime = (timeString: string) => {
         const [hours, minutes] = timeString.split(':');
@@ -243,7 +256,9 @@ import Footer from "./Footer";
                                 <p className="text-gray-600">per ticket</p>
                             </div>
 
-                            <button className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-200 mb-4 text-lg">
+                            <button 
+                             onClick={()=> handleBook(event.id)}
+                             className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-200 mb-4 text-lg">
                                 Book Now
                             </button>
 

@@ -1,9 +1,13 @@
-import { Menu, User, X } from "lucide-react";
+import { LogOut, Menu, User, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from '../lib/utils';
 import { useNavigate } from "react-router-dom";
+import { logoutUser } from "../services/AuthService";
 
 export default function Navbar() {
+
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const role = localStorage.getItem('userRole');
 
   const navigate = useNavigate();
 
@@ -26,18 +30,56 @@ export default function Navbar() {
     }
   };
 
+  const handleDashboard = (e:any) => {
+    console.log(role)
+    e.preventDefault();
+    if (role === 'customer') {
+      navigate('/customerDashboard');
+    } else if (role === 'organizer') {
+      navigate('/organizerDashboard');
+    } else if (role === 'admin') {
+      navigate('/adminDashboard');
+    }
+  };
+
+  const handleLogout = async (e:any) => {
+    e.preventDefault();
+    const logoutResponse = await logoutUser();
+    alert(logoutResponse.message);
+    localStorage.clear();
+    navigate('/login');
+ 
+  };
+
+  const handleLogin = (e:any) => {
+    e.preventDefault();
+    navigate('/login');
+  };
+  
+
     const navItem = [
         {name: "Home", href: "/"},
         {name: "About", href: "/about"},
         {name: "Contact", href: "/contact"},
         {name: "Events", href: "#",  onClick: handleEventsClick},
-        {name: (
+        ...(isLoggedIn ?  
+          [{ name: "Dashboard", href: "#", onClick: handleDashboard }] : 
+          [])
+          ,
+          { name: (
+            isLoggedIn ? 
+            <span className="flex items-center gap-1">
+              <LogOut size={20} />
+              Logout
+            </span>
+            :
             <span className="flex items-center gap-1">
               <User size={20} />
               Login
             </span>
-          ),
-          href: "/login"},
+          ), 
+          href: "#", 
+    onClick: isLoggedIn ? handleLogout : handleLogin}
     ];
 
     const [isScrolled, setIsScrolled] = useState(false);

@@ -7,6 +7,10 @@ import EachEvent  from './components/EachEvent'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import ScrollToTop from './components/ScrollToTop'
+import CustomerDashboard from './components/CustomerDashboard'
+import OrganizerDashboard from './components/OrganizerDashboard'
+import AdminDashboard from './components/AdminDashboard'
+import MakeBooking from './components/MakeBooking'
 
 function App() {
  
@@ -22,6 +26,10 @@ function App() {
           <Route path='/eachEvent/:id' element={<EachEvent/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/contact' element={<Contact/>}/>
+          <Route path='/customerDashboard' element={<CustomerDashboard/>}/>
+          <Route path='/organizerDashboard' element={<OrganizerDashboard/>}/>
+          <Route path='/adminDashboard' element={<AdminDashboard/>}/>
+          <Route path='/makeBooking' element={<MakeBooking/>}/>
         </Routes>
       </Router>
     </>

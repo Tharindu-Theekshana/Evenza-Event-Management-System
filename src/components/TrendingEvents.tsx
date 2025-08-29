@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {getAllApprovedEvents} from '../services/EventService';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, MapPin, Tag } from 'lucide-react';
 import  EachEvent  from './EachEvent';
 import { useNavigate } from 'react-router-dom';
 
@@ -59,6 +59,8 @@ const TrendingEvents = () => {
         navigate(`/eachEvent/${id}`)
     }
 
+    
+
     return(
         <section id='events' className=" bg-gray-50 ">
             <h2 className='text-3xl md:text-4xl font-bold text-center text-blue-950 pt-7 pb-7'>Trending Events Right Now</h2>
@@ -71,11 +73,11 @@ const TrendingEvents = () => {
                             
                         ))}
                         <div className='px-4 py-4'>
-                            <h3 className='font-bold text-[18px] text-blue-950 uppercase'>{event.name}</h3>
-                            <h2 className='pt-1 text-blue-800 font-medium'>{event.date? new Date(event.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year: 'numeric'}) : 'Still not mentioned'}</h2>
-                            <h2 className='text-blue-800 font-medium'>{formatTime(event.time)}</h2>
-                            <h2 className='text-[17px] text-gray-800 font-semibold'>{event.location}</h2>
-                            <h2 className='text-gray-600'>{event.category}</h2>
+                            <div className='font-bold text-[19px] text-blue-950 uppercase'>{event.name}</div>
+                            <div className='pt-1 flex items-center gap-3 text-blue-800 font-medium'><Calendar className="h-4 w-4 text-blue-900" /><span>{event.date? new Date(event.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year: 'numeric'}) : 'Still not mentioned'}</span></div>
+                            <div className='flex items-center gap-3 text-blue-800 font-medium'><Clock className="h-4 w-4 text-blue-900" /><span>{formatTime(event.time)}</span></div>
+                            <div className='flex items-center gap-3 text-[17px] text-gray-800 font-semibold'><MapPin className="h-4 w-4 text-blue-900" /><span>{event.location}</span></div>
+                            <div className='flex items-center gap-3 text-gray-600'><Tag className="h-4 w-4 text-gray-500" /><span>{event.category}</span></div>
                             <span className='text-[12px] text-gray-700 font-bold'>{event.price} LKR </span><span className='text-[12px] text-gray-600'>Upwards</span>
                         </div>
                         

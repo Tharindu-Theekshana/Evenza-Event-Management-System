@@ -26,3 +26,31 @@ export const getEventById = async (id: number)=> {
         throw e;
     }
 }
+
+export const getAllEventsOfOrganizer = async (id:number) => {
+
+    try{
+        const response = await api.get(`/event/eventsOfOrganizer/${id}`);
+        return response.data;
+
+    }catch(e){
+        console.error("cant get all events: ",e);
+        throw e;
+    }
+};
+
+export const getEventsOfOrganizerByStatus = async (status: string,id:number) => {
+    try{
+
+        const response = await api.get(`/event/getOrganizerEventsByStatus/${id}`, {
+            params : {
+                status : status
+            }
+        });
+        return response.data;
+
+    }catch(e){
+        console.error("cant get events : ", e);
+        throw e;
+    }
+}

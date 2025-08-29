@@ -11,6 +11,10 @@ import CustomerDashboard from './components/CustomerDashboard'
 import OrganizerDashboard from './components/OrganizerDashboard'
 import AdminDashboard from './components/AdminDashboard'
 import MakeBooking from './components/MakeBooking'
+import TotalEvents from './components/TotalEvents'
+import EventsByStatus from './components/EventsByStatus'
+import CreateEvent from './components/CreateEvent'
+import Settings from './components/Settings'
 
 function App() {
  
@@ -30,6 +34,10 @@ function App() {
           <Route path='/organizerDashboard' element={<OrganizerDashboard/>}/>
           <Route path='/adminDashboard' element={<AdminDashboard/>}/>
           <Route path='/makeBooking' element={<MakeBooking/>}/>
+          <Route path='/totalEvents' element={<TotalEvents/>}/>
+          <Route path='/eventsByStatus' element={<EventsByStatus/>}/>
+          <Route path='/createEvent' element={<CreateEvent/>}/>
+          <Route path='/settings' element={<Settings/>}/>
         </Routes>
       </Router>
     </>

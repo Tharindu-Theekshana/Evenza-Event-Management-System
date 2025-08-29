@@ -130,7 +130,7 @@ export default function Login() {
           localStorage.setItem('token', response.token);
           localStorage.setItem('userRole', response.role);
           localStorage.setItem('isLoggedIn', response.loggedIn);
-          localStorage.setItem('userId', response.userId);
+          localStorage.setItem('userId', response.id);
           localStorage.setItem('name',response.name);
       }; 
         alert(response.message);

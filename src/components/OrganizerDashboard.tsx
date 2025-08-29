@@ -10,6 +10,7 @@ import {
   User
 } from 'lucide-react';
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 interface StatCardProps {
   title: string;
@@ -17,12 +18,18 @@ interface StatCardProps {
   value: string;
 }
 
-const handleClick = (value:any) => {
+
+
+const OrganizerDashboard: FC = () => {
+  const name = localStorage.getItem('name');
+  const navigate = useNavigate();
+
+  const handleClick = (value:any) => {
 
     if(value == "total"){
-        console.log("okkoma")
+        navigate("/totalEvents");
     }else{
-        console.log(value);
+        navigate("/eventsByStatus", {state: {value}})
     }
 }
 
@@ -38,9 +45,6 @@ const StatCard: FC<StatCardProps> = ({ title,value, icon: Icon }) => (
     </div>
   </div>
 );
-
-const OrganizerDashboard: FC = () => {
-  const name = localStorage.getItem('name');
 
   return (
     <>
@@ -72,12 +76,14 @@ const OrganizerDashboard: FC = () => {
                 <h2 className="text-xl font-semibold text-blue-900 mb-4">Quick Actions</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <button
+                    onClick={()=> {navigate("/createEvent")}}
                     className="flex items-center justify-center p-4 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200"
                   >
                     <Plus className="h-5 w-5 mr-2" />
                     Create New Event
                   </button>
                   <button
+                    onClick={()=> {navigate("/settings")}}
                     className="flex items-center justify-center p-4 border-2 border-blue-900 text-blue-900 rounded-lg hover:bg-blue-50 transition-colors duration-200"
                   >
                     <Settings className="h-5 w-5 mr-2" />

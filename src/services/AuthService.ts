@@ -1,23 +1,23 @@
 import api from "./api";
 
-type UserType = 'customer' | 'organizer';
+type role = 'customer' | 'organizer' | 'admin';
 
-export interface AuthFormData {
+export interface FormData {
   name?: string;
   email: string;
   password: string;
   confirmPassword?: string;
-  userType?: UserType;
+  role?: role;
 }
 
-export const register = async (data: AuthFormData) => {
+export const register = async (data: FormData) => {
     try {
         const response = await api.post("/auth/register", {
             name: data.name,
             email: data.email,
             password: data.password,
             confirmPassword: data.confirmPassword,
-            role: data.userType
+            role: data.role
         });
 
         return response.data;
@@ -27,7 +27,7 @@ export const register = async (data: AuthFormData) => {
     }
 };
 
-export const login = async (data: AuthFormData) => {
+export const login = async (data: FormData) => {
     try{
         const response = await api.post("/auth/login",{
             email: data.email,

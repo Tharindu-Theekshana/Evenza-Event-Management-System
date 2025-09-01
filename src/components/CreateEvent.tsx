@@ -204,19 +204,16 @@ const CreateEvent: React.FC = () => {
     <>
     <Navbar/>
     <div className="h-[1200px] bg-gradient-to-br from-blue-50 via-white to-blue-50 ">
-        <div className='py-10 bg-blue-900'></div>
+    <div className='py-10 bg-blue-900'></div>
       <div className="max-w-3xl pt-8 mx-auto">
-        {/* Header */}
         <div className="mb-8">        
           <h1 className="text-3xl md:text-4xl text-center font-bold text-blue-900 mb-2">Create New Event</h1>
           <p className="text-gray-600 md:text-lg text-center">Fill in the details to create your event</p>
         </div>
 
-        {/* Form */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100">
           <div className="p-6 space-y-6">
             
-            {/* Event Name */}
             <div>
               <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
                 <Tag className="h-4 w-4 text-blue-900" />

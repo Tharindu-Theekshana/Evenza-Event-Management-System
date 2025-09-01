@@ -8,14 +8,14 @@ import { useNavigate } from 'react-router-dom';
 import { login, register as registerUser } from "../services/AuthService";
 
 
-type UserType = 'customer' | 'organizer';
+type role = 'customer' | 'organizer';
 
 interface FormData {
   name?: string;
   email: string;
   password: string;
   confirmPassword?: string;
-  userType?: UserType;
+  role?: role;
 }
 
 const loginSchema = yup.object({
@@ -30,7 +30,7 @@ const registerSchema = yup.object({
   confirmPassword: yup.string()
     .oneOf([yup.ref("password")], "Passwords do not match")
     .required("Confirm password is required"),
-  userType: yup.mixed<UserType>().oneOf(["customer", "organizer"]).required("User type is required"),
+  userType: yup.mixed<role>().oneOf(["customer", "organizer"]).required("User type is required"),
 });
 
 interface InputFieldProps {
@@ -93,7 +93,7 @@ export default function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [selectedUserType, setSelectedUserType] = useState<UserType>('customer');
+  const [selectedUserType, setSelectedUserType] = useState<role>('customer');
 
   const navigate = useNavigate();
 
@@ -106,7 +106,7 @@ export default function Login() {
   } = useForm<FormData>({
     resolver: yupResolver(isSignUp ? registerSchema : loginSchema),
     defaultValues: {
-      userType: 'customer'
+      role: 'customer'
     }
   });
 
@@ -150,9 +150,9 @@ export default function Login() {
     }
   };
 
-  const handleUserTypeSelect = (type: UserType) => {
+  const handleUserTypeSelect = (type: role) => {
     setSelectedUserType(type);
-    setValue('userType', type);
+    setValue('role', type);
   };
 
   const toggleMode = () => {
@@ -235,9 +235,9 @@ export default function Login() {
                         </div>
                       </button>
                     </div>
-                    {errors.userType && (
+                    {errors.role && (
                       <p className="text-red-500 text-sm mt-1 ml-1 animate-in slide-in-from-left-2 duration-200">
-                        {errors.userType.message}
+                        {errors.role.message}
                       </p>
                     )}
                   </div>

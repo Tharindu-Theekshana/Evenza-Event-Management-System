@@ -17,6 +17,7 @@ import CreateEvent from './components/CreateEvent'
 import Settings from './components/Settings'
 import MyBookings from './components/MyBookings'
 import RefundedBookings from './components/RefundedBookings'
+import CreateAdmin from './components/CreateAdmin'
 
 function App() {
  
@@ -42,6 +43,7 @@ function App() {
           <Route path='/settings' element={<Settings/>}/>
           <Route path='/myBookings' element={<MyBookings/>}/>
           <Route path='/refundedBookings' element={<RefundedBookings/>}/>
+          <Route path='/createAdmin' element={<CreateAdmin/>}/>
         </Routes>
       </Router>
     </>

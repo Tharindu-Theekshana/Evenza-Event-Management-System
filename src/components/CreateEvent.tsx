@@ -203,7 +203,7 @@ const CreateEvent: React.FC = () => {
   return (
     <>
     <Navbar/>
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 ">
+    <div className="h-[1200px] bg-gradient-to-br from-blue-50 via-white to-blue-50 ">
         <div className='py-10 bg-blue-900'></div>
       <div className="max-w-3xl pt-8 mx-auto">
         {/* Header */}

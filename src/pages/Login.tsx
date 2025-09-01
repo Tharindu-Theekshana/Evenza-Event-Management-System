@@ -18,7 +18,6 @@ interface FormData {
   userType?: UserType;
 }
 
-// ✅ Yup Schemas
 const loginSchema = yup.object({
   email: yup.string().email("Invalid email").required("Email is required"),
   password: yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
@@ -57,12 +56,12 @@ const InputField: React.FC<InputFieldProps> = ({
 }) => (
   <div className="relative">
     <div className="relative">
-      <Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-900/60 w-5 h-5" />
+      <Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-900/40 w-5 h-5" />
       <input
         type={type}
         placeholder={placeholder}
         {...register}
-        className={`w-full pl-10 pr-${showPasswordToggle ? '12' : '4'} py-3 border-2 rounded-xl bg-white/80 backdrop-blur-sm transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-900/20 ${
+        className={`w-full pl-10 pr-${showPasswordToggle ? '12' : '4'} py-3  border-2 rounded-xl bg-white/80  transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-900/20 ${
           error
             ? 'border-red-400 focus:border-red-500'
             : 'border-blue-900/20 focus:border-blue-900/40'
@@ -123,7 +122,6 @@ export default function Login() {
       } else {
         
         const response = await login(data);
-        console.log(response)
         if(response.token){
 
           localStorage.clear();
@@ -168,9 +166,9 @@ export default function Login() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen pt-20 bg-gradient-to-br from-blue-50 via-white to-blue-100 flex items-center justify-center p-4">
+      <div className='py-10 bg-blue-900'></div>
+      <div className="min-h-screen pb-10 bg-gradient-to-br from-blue-50 via-white to-blue-100 flex items-center justify-center p-4">
         <div className="w-full max-w-md">
-          {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-900 rounded-2xl mb-4 shadow-lg">
               <div className="w-8 h-8 bg-white rounded-lg"></div>
@@ -185,12 +183,10 @@ export default function Login() {
             </p>
           </div>
 
-          {/* Form Card */}
           <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-white/30 p-8">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {isSignUp && (
                 <>
-                  {/* User Type Selection */}
                   <div>
                     <label className="block text-sm font-medium text-blue-900/80 mb-3">
                       I want to join as:
@@ -246,7 +242,6 @@ export default function Login() {
                     )}
                   </div>
 
-                  {/* Full Name */}
                   <InputField
                     type="text"
                     placeholder="Full Name"
@@ -257,7 +252,6 @@ export default function Login() {
                 </>
               )}
 
-              {/* Email */}
               <InputField
                 type="email"
                 placeholder="Email Address"

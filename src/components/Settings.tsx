@@ -44,8 +44,8 @@ export default function Settings() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">
-              <SettingsIcon className="w-10 h-10 text-blue-900" />
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-900 rounded-full mb-6">
+              <SettingsIcon className="w-10 h-10 text-white" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-blue-950 mb-3">
               Settings

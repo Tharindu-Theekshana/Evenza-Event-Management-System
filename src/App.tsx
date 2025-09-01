@@ -15,6 +15,8 @@ import TotalEvents from './components/TotalEvents'
 import EventsByStatus from './components/EventsByStatus'
 import CreateEvent from './components/CreateEvent'
 import Settings from './components/Settings'
+import MyBookings from './components/MyBookings'
+import RefundedBookings from './components/RefundedBookings'
 
 function App() {
  
@@ -38,6 +40,8 @@ function App() {
           <Route path='/eventsByStatus' element={<EventsByStatus/>}/>
           <Route path='/createEvent' element={<CreateEvent/>}/>
           <Route path='/settings' element={<Settings/>}/>
+          <Route path='/myBookings' element={<MyBookings/>}/>
+          <Route path='/refundedBookings' element={<RefundedBookings/>}/>
         </Routes>
       </Router>
     </>

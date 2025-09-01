@@ -56,11 +56,11 @@ import Footer from "./Footer";
     };
 
     const handleBook = (id:any) => {
-        if(isLoggedIn && role == "customer" || "user"){
+        if(isLoggedIn && role == "customer"){
             navigate("/makeBooking", {state: {id}});
   
           }else{
-            alert("Login as a customer to hire!");
+            alert("Login as a customer to book ticket!");
           }
     }
 
@@ -251,7 +251,6 @@ import Footer from "./Footer";
                         <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-18">
                             <div className="text-center mb-6">
                                 <div className="flex items-center justify-center space-x-2 mb-2">
-                                    <DollarSign className="text-blue-900 w-6 h-6" />
                                     <span className="text-3xl font-bold text-gray-900">{event.price}</span>
                                     <span className="text-gray-500">LKR</span>
                                 </div>

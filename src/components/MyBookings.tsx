@@ -92,7 +92,7 @@ const MyBookings: React.FC = () => {
     if (status.toLowerCase() === 'refunded' || refunded) return <RefreshCw className="h-4 w-4" />;
     
     switch (status.toLowerCase()) {
-      case 'Not Refunded':
+      case 'not refunded':
         return <CheckCircle className="h-4 w-4" />;
       case 'refund requested':
         return <Clock className="h-4 w-4" />;
@@ -109,7 +109,7 @@ const MyBookings: React.FC = () => {
     if (status.toLowerCase() === 'refunded' || refunded) return 'text-purple-600 bg-purple-50 border-purple-200';
     
     switch (status.toLowerCase()) {
-      case 'Not Refunded':
+      case 'not refunded':
         return 'text-green-600 bg-green-50 border-green-200';
       case 'refund requested':
         return 'text-yellow-600 bg-yellow-50 border-yellow-200';
@@ -255,14 +255,12 @@ const MyBookings: React.FC = () => {
     <>
     <Navbar/>
     <div className="min-h-screen bg-gray-50">
-      {/* Header Section */}
       <div className="py-10 bg-blue-900"></div>
       
       <div className="container mx-auto px-4 py-8">
-        {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-blue-900 mb-2">My Bookings</h1>
-          <p className="text-gray-600">Manage your event tickets and bookings</p>
+          <h1 className="text-3xl text-center font-bold text-blue-900 mb-2">My Bookings</h1>
+          <p className="text-gray-600 text-center">Manage your event tickets and bookings</p>
         </div>
 
         {/* Filters and Search */}

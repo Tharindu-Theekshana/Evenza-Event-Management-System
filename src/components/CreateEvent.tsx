@@ -68,7 +68,6 @@ const CreateEvent: React.FC = () => {
       [name]: name === 'ticketPrice' || name === 'availableSeats' ? Number(value) : value
     }));
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -89,7 +88,6 @@ const CreateEvent: React.FC = () => {
         return;
       }
 
-      // Validate file size (5MB max)
       if (file.size > 5 * 1024 * 1024) {
         setErrors(prev => ({
           ...prev,
@@ -103,14 +101,12 @@ const CreateEvent: React.FC = () => {
         image: file
       }));
 
-      // Create preview
       const reader = new FileReader();
       reader.onload = (e) => {
         setImagePreview(e.target?.result as string);
       };
       reader.readAsDataURL(file);
 
-      // Clear image error
       if (errors.image) {
         setErrors(prev => ({
           ...prev,
@@ -140,7 +136,6 @@ const CreateEvent: React.FC = () => {
     if (formData.ticketPrice < 0) newErrors.ticketPrice = 'Price cannot be negative';
     if (formData.availableSeats <= 0) newErrors.availableSeats = 'Available seats must be greater than 0';
 
-    // Validate date is not in the past
     const selectedDate = new Date(formData.date);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -179,9 +174,7 @@ const CreateEvent: React.FC = () => {
           formDataToSend.append('images', formData.image);
         }
   
-        // ✅ API Call
         const response = await createEvent(formDataToSend);
-        console.log('Creating event with data:', formData);     
         await new Promise(resolve => setTimeout(resolve, 1000));
         alert(response.message);
         navigate('/organizerDashboard');

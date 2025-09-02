@@ -55,9 +55,9 @@ import Footer from "./Footer";
         });
     };
 
-    const handleBook = (id:any) => {
+    const handleBook = (event: Event) => {
         if(isLoggedIn && role == "customer"){
-            navigate("/makeBooking", {state: {id}});
+            navigate("/makeBooking", {state: {event}});
   
           }else{
             alert("Login as a customer to book ticket!");
@@ -258,7 +258,7 @@ import Footer from "./Footer";
                             </div>
 
                             <button 
-                             onClick={()=> handleBook(event.id)}
+                             onClick={()=> handleBook(event)}
                              className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-4 px-6 rounded-xl transition-colors duration-200 mb-4 text-lg">
                                 Book Now
                             </button>

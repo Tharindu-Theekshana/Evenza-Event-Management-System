@@ -98,7 +98,7 @@ const AdminDashboard: React.FC = () => {
       value:"declined"
     },
     {
-      id: 'refund-requested',
+      id: '/refundsByStatus',
       title: 'Refund Requested Tickets',
       description: 'Pending refund requests',
       icon: CreditCard,
@@ -109,18 +109,18 @@ const AdminDashboard: React.FC = () => {
       value:"refund requested"
     },
     {
-      id: 'refunded-tickets',
-      title: 'Refunded Tickets',
+      id: '/refundsByStatus',
+      title: 'Refund Approved Tickets',
       description: 'Successfully processed refunds',
       icon: RefreshCw,
       count: "Click to access",
       color: 'text-emerald-700',
       bgColor: 'bg-emerald-100',
       hoverColor: 'hover:bg-emerald-200',
-      value:"refunded"
+      value:"refund approved"
     },
     {
-      id: 'refund-cancelled',
+      id: '/refundsByStatus',
       title: 'Refund Cancelled Tickets',
       description: 'Cancelled refund requests',
       icon: X,

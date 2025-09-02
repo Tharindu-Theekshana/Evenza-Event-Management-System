@@ -35,7 +35,7 @@ interface Event {
 
 export default function AdminEventsByStatus() {
   const location = useLocation();
-  const status = location.state?.value || 'pending';
+  const status = location.state?.value;
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
 

@@ -18,6 +18,8 @@ import Settings from './components/Settings'
 import MyBookings from './components/MyBookings'
 import RefundedBookings from './components/RefundedBookings'
 import CreateAdmin from './components/CreateAdmin'
+import AllCustomers from './components/AllCustomers'
+import AllOrganizers from './components/AllOrganizers'
 
 function App() {
  
@@ -44,6 +46,8 @@ function App() {
           <Route path='/myBookings' element={<MyBookings/>}/>
           <Route path='/refundedBookings' element={<RefundedBookings/>}/>
           <Route path='/createAdmin' element={<CreateAdmin/>}/>
+          <Route path='/allCustomers' element={<AllCustomers/>}/>
+          <Route path='/allOrganizers' element={<AllOrganizers/>}/>
         </Routes>
       </Router>
     </>

@@ -41,7 +41,7 @@ const AdminDashboard: React.FC = () => {
       hoverColor: 'hover:bg-blue-200'
     },
     {
-      id: 'all-customers',
+      id: '/allCustomers',
       title: 'All Customers',
       description: 'View and manage customer accounts',
       icon: Users,
@@ -51,7 +51,7 @@ const AdminDashboard: React.FC = () => {
       hoverColor: 'hover:bg-purple-200'
     },
     {
-      id: 'all-organizers',
+      id: '/allOrganizers',
       title: 'All Organizers',
       description: 'Manage event organizer accounts',
       icon: Users,

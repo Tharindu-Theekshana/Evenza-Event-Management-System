@@ -23,6 +23,7 @@ interface AdminOption {
   color: string;
   bgColor: string;
   hoverColor: string;
+  value: string;
 }
 
 
@@ -38,7 +39,8 @@ const AdminDashboard: React.FC = () => {
       icon: UserPlus,
       color: 'text-blue-900',
       bgColor: 'bg-blue-100',
-      hoverColor: 'hover:bg-blue-200'
+      hoverColor: 'hover:bg-blue-200',
+      value:""
     },
     {
       id: '/allCustomers',
@@ -48,7 +50,8 @@ const AdminDashboard: React.FC = () => {
       count: "Click to access",
       color: 'text-purple-700',
       bgColor: 'bg-purple-100',
-      hoverColor: 'hover:bg-purple-200'
+      hoverColor: 'hover:bg-purple-200',
+      value:""
     },
     {
       id: '/allOrganizers',
@@ -58,37 +61,41 @@ const AdminDashboard: React.FC = () => {
       count: "Click to access",
       color: 'text-indigo-700',
       bgColor: 'bg-indigo-100',
-      hoverColor: 'hover:bg-indigo-200'
+      hoverColor: 'hover:bg-indigo-200',
+      value:""
     },
     {
-      id: 'pending-events',
+      id: '/adminEvents',
       title: 'Pending Events',
       description: 'Events awaiting approval',
       icon: Clock,
       count: "Click to access",
       color: 'text-orange-700',
       bgColor: 'bg-orange-100',
-      hoverColor: 'hover:bg-orange-200'
+      hoverColor: 'hover:bg-orange-200',
+      value:"pending"
     },
     {
-      id: 'approved-events',
+      id: '/adminEvents',
       title: 'Approved Events',
       description: 'Successfully approved events',
       icon: CheckCircle,
       count: "Click to access",
       color: 'text-green-700',
       bgColor: 'bg-green-100',
-      hoverColor: 'hover:bg-green-200'
+      hoverColor: 'hover:bg-green-200',
+      value:"approved"
     },
     {
-      id: 'declined-events',
+      id: '/adminEvents',
       title: 'Declined Events',
       description: 'Events that were rejected',
       icon: XCircle,
       count: "Click to access",
       color: 'text-red-700',
       bgColor: 'bg-red-100',
-      hoverColor: 'hover:bg-red-200'
+      hoverColor: 'hover:bg-red-200',
+      value:"declined"
     },
     {
       id: 'refund-requested',
@@ -98,7 +105,8 @@ const AdminDashboard: React.FC = () => {
       count: "Click to access",
       color: 'text-yellow-700',
       bgColor: 'bg-yellow-100',
-      hoverColor: 'hover:bg-yellow-200'
+      hoverColor: 'hover:bg-yellow-200',
+      value:"refund requested"
     },
     {
       id: 'refunded-tickets',
@@ -108,7 +116,8 @@ const AdminDashboard: React.FC = () => {
       count: "Click to access",
       color: 'text-emerald-700',
       bgColor: 'bg-emerald-100',
-      hoverColor: 'hover:bg-emerald-200'
+      hoverColor: 'hover:bg-emerald-200',
+      value:"refunded"
     },
     {
       id: 'refund-cancelled',
@@ -118,13 +127,14 @@ const AdminDashboard: React.FC = () => {
       count: "Click to access",
       color: 'text-rose-700',
       bgColor: 'bg-rose-100',
-      hoverColor: 'hover:bg-rose-200'
+      hoverColor: 'hover:bg-rose-200',
+      value:"refund cancelled"
     }
   ];
 
  
-  const handleOptionClick = (optionId: string): void => {
-    navigate(optionId);
+  const handleOptionClick = (optionId: string,value: string): void => {
+    navigate(optionId, {state:{value}});
   };
 
   return (
@@ -141,12 +151,11 @@ const AdminDashboard: React.FC = () => {
             <p className="text-gray-600 text-center text-lg">Manage all aspects of your platform from this central dashboard</p>
           </div>
 
-          {/* Admin options grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {adminOptions.map((option) => (
               <div
                 key={option.id}
-                onClick={() => handleOptionClick(option.id)}
+                onClick={() => handleOptionClick(option.id,option.value)}
                 className={`bg-white rounded-lg shadow-sm border border-gray-200 p-6 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-blue-300 hover:-translate-y-1 group`}
               >
                 <div className="flex items-start justify-between mb-4">

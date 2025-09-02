@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import {getAllApprovedEvents} from '../services/EventService';
-import { ArrowRight, Calendar, Clock, MapPin, Tag } from 'lucide-react';
-import  EachEvent  from './EachEvent';
+import { Calendar, Clock, MapPin, Tag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 

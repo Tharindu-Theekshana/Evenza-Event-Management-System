@@ -74,3 +74,34 @@ export const createEvent = async (formData:any) => {
         throw e;
     }
 };
+
+export const getEventsByStatus = async (status: string) => {
+    try{
+
+        const response = await api.get(`/event/getEventsByStatus`, {
+            params : {
+                status : status
+            }
+        });
+        return response.data;
+
+    }catch(e){
+        console.error("cant get events : ", e);
+        throw e;
+    }
+};
+
+export const updateEventStatus = async (id:number,status:string) => {
+    try{
+        const response = await api.put(`/event/updateStatus/${id}`,null, {
+            params : {
+                status : status
+            }
+        });
+        return response.data;
+
+    }catch(e){
+        console.error("cant update event status: ", e);
+        throw e;
+    }
+};

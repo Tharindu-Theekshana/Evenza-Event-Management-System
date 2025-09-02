@@ -20,6 +20,7 @@ import RefundedBookings from './components/RefundedBookings'
 import CreateAdmin from './components/CreateAdmin'
 import AllCustomers from './components/AllCustomers'
 import AllOrganizers from './components/AllOrganizers'
+import AdminEventsByStatys from './components/AdminEventsByStatys'
 
 function App() {
  
@@ -48,6 +49,7 @@ function App() {
           <Route path='/createAdmin' element={<CreateAdmin/>}/>
           <Route path='/allCustomers' element={<AllCustomers/>}/>
           <Route path='/allOrganizers' element={<AllOrganizers/>}/>
+          <Route path='/adminEvents' element={<AdminEventsByStatys/>}/>
         </Routes>
       </Router>
     </>

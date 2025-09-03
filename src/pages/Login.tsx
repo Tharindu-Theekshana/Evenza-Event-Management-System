@@ -30,7 +30,7 @@ const registerSchema = yup.object({
   confirmPassword: yup.string()
     .oneOf([yup.ref("password")], "Passwords do not match")
     .required("Confirm password is required"),
-  userType: yup.mixed<role>().oneOf(["customer", "organizer"]).required("User type is required"),
+  role: yup.mixed<role>().oneOf(["customer", "organizer"]).required("User type is required"),
 });
 
 interface InputFieldProps {
